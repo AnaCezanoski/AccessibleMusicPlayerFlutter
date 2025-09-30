@@ -19,15 +19,14 @@ O player está configurado para exibir a música:
 - **Título:** Nonstop  
 - **Artista:** Drake  
 - **Álbum:** Scorpion  
-- **Duração:** 5:12  
-- **Capa:** [Link da capa oficial](https://upload.wikimedia.org/wikipedia/en/2/2e/Scorpion_by_Drake.jpg)  
+- **Duração:** 3:59  
+- **Capa:** [Link da imagem de capa](https://upload.wikimedia.org/wikipedia/pt/c/c2/Scorpion_Drake.jpg)  
 
  *O projeto atualmente exibe apenas a interface, sem reprodução real do áudio.*  
 
 ## Tecnologias Utilizadas  
 
-- [Flutter](https://flutter.dev/)  
-- [Material Design](https://m3.material.io/)  
+- Flutter 
 - Recursos nativos de **Semantics** e **Acessibilidade do Flutter**  
 
 ## Como Executar  
@@ -35,3 +34,7 @@ O player está configurado para exibir a música:
 1. Clone este repositório:  
    ```bash
    git clone https://github.com/AnaCezanoski/AccessibleMusicPlayerFlutter.git
+
+2. Abra o projeto e execute no terminal:
+   ```bash
+   flutter run

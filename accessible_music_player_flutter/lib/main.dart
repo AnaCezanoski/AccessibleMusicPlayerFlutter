@@ -14,7 +14,7 @@ class AccessibleMusicPlayerApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF1DB954), // verde Spotify
+          seedColor: const Color(0xFF1DB954),
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
@@ -39,7 +39,7 @@ class PlayerScreen extends StatefulWidget {
 class _PlayerScreenState extends State<PlayerScreen> {
   bool isPlaying = false;
   bool isLiked = false;
-  double progress = 0.25; // 25%
+  double progress = 0.25;
 
   final FocusNode prevFocus = FocusNode(debugLabel: 'Anterior');
   final FocusNode playPauseFocus = FocusNode(debugLabel: 'Reproduzir/Pausar');
@@ -215,7 +215,6 @@ class _PlayerScreenState extends State<PlayerScreen> {
 
                     const SizedBox(height: 24),
 
-                    const _HelperTips(),
                   ],
                 ),
               );
@@ -226,7 +225,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
     );
   }
 
-  static const double _durationSeconds = 330; // duração fictícia ~5:30
+  static const double _durationSeconds = 239; // duração ~3:59
   String _formatTime(double seconds) {
     final s = seconds.round();
     final m = s ~/ 60;
@@ -270,41 +269,6 @@ class _A11yIconButton extends StatelessWidget {
       toggled: isToggle ? isToggled : null,
       enabled: true,
       child: ExcludeSemantics(child: button),
-    );
-  }
-}
-
-class _HelperTips extends StatelessWidget {
-  const _HelperTips();
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.grey.shade900,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.grey.shade800),
-      ),
-      child: DefaultTextStyle(
-        style: theme.textTheme.bodyMedium!,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Text(
-              'Como validar a acessibilidade deste player',
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
-            ),
-            SizedBox(height: 8),
-            Text('• Ative o TalkBack (Android) ou VoiceOver (iOS) e navegue por todos os controles.'),
-            Text('• Aumente o tamanho de fonte do sistema e verifique se título/artista continuam legíveis.'),
-            Text('• Use um verificador de contraste e confira texto ícone/fundo; este tema escuro atinge AA.'),
-            Text('• Tente operar o slider pelo leitor de tela e perceba o anúncio do valor em porcentagem.'),
-            Text('• Garanta que todos os botões tenham área de toque confortável (mínimo 44x44 lógicos).'),
-          ],
-        ),
-      ),
     );
   }
 }
